@@ -55,8 +55,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _capturarNumber2(String number) {
     setState(() {
-      this.number2 = "$number2$number";
-      this.operacao = this.operacao + number.toString();
+      if (operador.isNotEmpty) {
+        this.number2 = "$number2$number";
+        this.operacao = this.operacao + number.toString();
+      }
     });
   }
 
