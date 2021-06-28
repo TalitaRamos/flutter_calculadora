@@ -46,8 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _capturarNumber1(String number) {
     setState(() {
-      this.number1 =  "$number1$number";
-      this.operacao = this.operacao + number.toString();
+      if (operador.isEmpty) {
+        this.number1 =  "$number1$number";
+        this.operacao = this.operacao + number.toString();
+      }
     });
   }
 
@@ -522,7 +524,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   child: Text(
                     'Calcular',
-                    style: TextStyle(fontSize: 15.0),
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily:'RobotoMono'
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -535,7 +541,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   child: Text(
                     'Zerar',
-                    style: TextStyle(fontSize: 15.0),
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily:'RobotoMono'
+                    ),
                   ),
                 ),
               ],
@@ -543,8 +553,18 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 20.0,
             ),
-            Text(operacao),
-            Text(resultadoText),
+            Text(operacao,
+                style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily:'RobotoMono'
+                )),
+            Text(resultadoText,
+                style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily:'RobotoMono'
+                )),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
