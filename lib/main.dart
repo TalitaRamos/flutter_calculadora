@@ -64,8 +64,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _capturarOperador(String operador) {
     setState(() {
-      this.operador = operador;
-      this.operacao = this.operacao + operador;
+      if (number1.isNotEmpty && this.operador.length != 1) {
+        this.operador = operador;
+        this.operacao = this.operacao + operador;
+      }
     });
   }
 
